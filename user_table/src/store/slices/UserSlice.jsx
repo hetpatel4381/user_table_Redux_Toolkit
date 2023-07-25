@@ -13,9 +13,11 @@ const userSlice = createSlice({
       // state.pop(action.payload);
       // console.log("hi", action.payload);
     },
-    deleteUsers(state, action) {},
+    clearAllUsers(state, action) {
+      return [];
+    },
   },
 });
 
 export default userSlice.reducer;
-export const { addUser, removeUser } = userSlice.actions;
+export const { addUser, removeUser, clearAllUsers } = userSlice.actions;
