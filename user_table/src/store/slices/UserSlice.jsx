@@ -14,9 +14,17 @@ const userSlice = createSlice({
       // console.log("hi", action.payload);
     },
     clearAllUsers(state, action) {
+      //if action is suppossed to be handled by one reducer, use reducers.
+      //if action is suppossed to be handled by multiple reducers, use extraReducers.
       return [];
     },
   },
+
+  extraReducers(builder){
+    builder.addCase(userSlice.actions.clearAllUsers, () => {
+      return [];
+    });
+  }
 });
 
 export default userSlice.reducer;
